@@ -1,10 +1,12 @@
 from .pages.main_page import MainPage
 from .pages.login_page import LoginPage
 from .pages.locators import MainPageLocators
+from selenium.common.exceptions import NoAlertPresentException
 
 def go_to_login_page(self):
     link = self.browser.find_element(*MainPageLocators.LOGIN_LINK)
     link.click()
+
 
 def test_guest_can_go_to_login_page(browser):
     link = "http://selenium1py.pythonanywhere.com"
