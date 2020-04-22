@@ -1,6 +1,6 @@
 from .pages.main_page import MainPage
 from .pages.login_page import LoginPage
-import  pytest
+import pytest
 
 
 @pytest.mark.login_guest
