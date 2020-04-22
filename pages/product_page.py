@@ -9,11 +9,21 @@ class ProductPage(BasePage):
         link = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET)
         link.click()
 
+    def go_to_basket_page(self):
+        link = self.browser.find_element(*ProductPageLocators.BASKET_BTN)
+        link.click()
+
     def check_add_item_to_basket(self):
         "проверка выдаваемости сообщений и сверка данных"
         self.should_be_msg_add_succes()
         self.should_be_msg_eq_name()
         self.should_be_price_eq_basket()
+
+    def should_basket_be_empty_for_guest(self):
+        self.go_to_basket_page()
+        assert len(self.browser.find_elements(*ProductPageLocators.BASKET_CONTENT)) == 1, "Basket not Empty for guest"
+        assert self.browser.find_element(*ProductPageLocators.BASKET_CONTENT).text,\
+            "Massage Empty basket not found"
 
     def should_be_btn_basket(self):
         assert self.is_element_present(*ProductPageLocators.ADD_TO_BASKET), "Button basket is not presented"
