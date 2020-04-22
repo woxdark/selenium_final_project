@@ -29,7 +29,6 @@ jupyter-console==6.1.0
 jupyter-core==4.6.1
 kiwisolver==1.2.0
 MarkupSafe==1.1.1
-matplotlib==3.2.1
 mistune==0.8.4
 mkl-fft==1.0.15
 mkl-random==1.1.0
@@ -41,7 +40,6 @@ notebook==5.7.8
 numpy==1.18.1
 olefile==0.46
 packaging==20.3
-pandas==1.0.3
 pandocfilters==1.4.2
 parso==0.6.2
 pexpect==4.8.0
