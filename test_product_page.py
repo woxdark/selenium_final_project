@@ -81,14 +81,14 @@ def test_message_disappeared_after_adding_product_to_basket(browser):
     product.should_be_disappered_message()
 
 
-@pytest.mark.need_review
+
 def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     link = "http://selenium1py.pythonanywhere.com/"
     page = ProductPage(browser, link)
     page.open()
     page.should_basket_be_empty_for_guest()
 
-
+@pytest.mark.need_review
 def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
     page = ProductPage(browser, link)
